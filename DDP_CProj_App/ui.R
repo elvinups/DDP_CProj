@@ -15,7 +15,7 @@ shinyUI(fluidPage(
     sidebarPanel(
        p("FAANG is an acronym for the companies Facebook, Amazon, Apple, Netflix and Google (now Alphabet Inc.)."),
        p("Source: ", a("Wikipedia article", href="https://en.wikipedia.org/wiki/Facebook,_Apple,_Amazon,_Netflix_and_Google")) ,
-       h4("Show stocks in graph:"),
+       h4("Show stocks in graph"),
        checkboxInput("show_Fb", " Facebook, Inc.", value = TRUE),
        checkboxInput("show_Aapl", " Apple Inc.", value = TRUE),
        checkboxInput("show_Amzn", " Amazon.com, Inc.", value = TRUE),
@@ -29,8 +29,8 @@ shinyUI(fluidPage(
        br(),
        h4(textOutput("market_cap")),
        br(),
-       p("Select one or several stocks by checking the boxes to the left."),
-       p("Check out some of the features available in the Plotly-graph by hoovering with the pointer over the 
+       p("Select one or several stocks by checking the checkboxes to the left."),
+       p("Try out some of the features available in the Plotly graph above by hoovering with the pointer over the 
         graph and, for example:", 
          br(),
          tags$ul(
