@@ -11,6 +11,8 @@ FAANG is an acronym for the companies Facebook, Amazon, Apple, Netflix and Googl
 
 In this Shiny application you can select one or several of the FAANG stocks, and show them in the same graph. This can be useful when analyzing their performance over time and when comparing the FAANG stocks performance with each other.
 
+You also see the current market capitalization in billion USD for the selected stocks.
+
 ## Example of a graph
 Here is an example showing how the graph looks for the Apple Inc. stock.
 ```{r, echo=FALSE, message=FALSE}
@@ -30,7 +32,7 @@ p
 ```
 
 ## Using the stocks comparision app
-First, select one or several stocks by checking the boxes to the left under the heading Show stocks in graph. After this you can check out some of the features available in the Plotly-graph by hoovering with the pointer over the graph and, for example:
+First, select one or several stocks by checking the checkboxes to the left under the heading Show stocks in graph. After this you can try out some of the features available in the Plotly graph by hoovering with the pointer over the graph and, for example:
 
 * zoom by using the + and - symbols showing
 * select a specific time interval by clicking and selecting area
@@ -40,5 +42,5 @@ Please explore other features by using the menu showing in the top right of the 
 window when hoovering over it with the pointer.
 
 ## Sources
-* FAANG acronym: Source: https://en.wikipedia.org/wiki/Facebook,_Apple,_Amazon,_Netflix_and_Google
-* Data source: Yahoo Finance.
+* <font size="4">FAANG acronym: Wikipedia, https://en.wikipedia.org/wiki/Facebook,_Apple,_Amazon,_Netflix_and_Google</font>
+* <font size="4">Data source: Yahoo Finance, https://finance.yahoo.com/</font>
