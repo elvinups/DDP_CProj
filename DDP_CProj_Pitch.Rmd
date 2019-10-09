@@ -1,0 +1,49 @@
+---
+title: "FAANG stocks comparison"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+author: "Mats"
+date: "October 9, 2019"
+output: ioslides_presentation
+always_allow_html: yes
+---
+
+## FAANG stocks comparison - Introduction
+FAANG is an acronym for the companies Facebook, Amazon, Apple, Netflix and Google (now Alphabet Inc.). 
+
+In this Shiny application you can select one or several of the FAANG stocks, and show them in the same graph. This can be useful when analyzing their performance over time and when comparing the FAANG stocks performance with each other.
+
+## Example of a graph
+Here is an example showing how the graph looks for the Apple Inc. stock.
+```{r, echo=FALSE, message=FALSE}
+library(plotly)
+library(quantmod)
+apa <- getSymbols("AAPL",src='yahoo')
+apple <- data.frame(Date=index(AAPL),coredata(AAPL))
+apple <- apple %>% select(1, 5)
+names(apple)[2] <- "Stock_price_close_USD"
+apple$name <- "Apple"
+
+p <- plot_ly(apple, x = ~Date, y = ~Stock_price_close_USD, width = 750, height = 300, 
+             type = "scatter", mode = "lines")
+p <- p %>% layout(xaxis = list(title="Time interval"), 
+                       yaxis = list(title="Stock closing price (USD)"))
+p
+```
+
+## Using the stocks comparision app
+First, select one or several stocks by checking the boxes to the left under the heading Show stocks in graph. After this you can check out some of the features available in the Plotly-graph by hoovering with the pointer over the graph and, for example:
+
+* zoom by using the + and - symbols showing
+* select a specific time interval by clicking and selecting area
+* pan the area vertically and horisontally by using the pan symbol.
+
+Please explore other features by using the menu showing in the top right of the graph 
+window when hoovering over it with the pointer.
+
+## Sources
+* FAANG acronym: Source: https://en.wikipedia.org/wiki/Facebook,_Apple,_Amazon,_Netflix_and_Google
+* Data source: Yahoo Finance.
