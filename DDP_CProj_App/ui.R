@@ -27,6 +27,8 @@ shinyUI(fluidPage(
     mainPanel(
        plotlyOutput("stocksPlot"),
        br(),
+       h4(textOutput("market_cap")),
+       br(),
        p("Select one or several stocks by checking the boxes to the left."),
        p("Check out some of the features available in the Plotly-graph by hoovering with the pointer over the 
         graph and, for example:", 
